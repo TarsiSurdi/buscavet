@@ -63,8 +63,8 @@ const Home: NextPage<HomeProps> = ({ links }) => {
           crossOrigin="anonymous"
         />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+        <link rel="icon" href="/favicons/favicon.ico" />
       </Head>
 
       <header className={styles.header}>
