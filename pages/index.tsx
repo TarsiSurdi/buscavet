@@ -1,6 +1,4 @@
 import type { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -9,10 +7,12 @@ import {
   FaBuilding,
   FaSyringe,
 } from "react-icons/fa";
-import { GiBull, GiFarmer } from "react-icons/gi";
-import { RiMedicineBottleFill } from "react-icons/ri";
 
-import styles from "../styles/Home.module.css";
+import { GiFarmer } from "react-icons/gi";
+import { RiMedicineBottleFill } from "react-icons/ri";
+import Layout from "../components/Layout";
+
+import styles from "../styles/Home.module.scss";
 
 interface HomeProps {
   links: string[];
@@ -24,62 +24,16 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage<HomeProps> = ({ links }) => {
+const Home: NextPage<HomeProps> = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Buscavet</title>
-
-        <meta name="title" content="🐮 Buscavet" />
-        <meta
-          name="description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://buscavet.vercel.app/" />
-        <meta property="og:title" content="🐮 Buscavet" />
-        <meta
-          property="og:description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
-        <meta property="og:image" content="/logo.jpg" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://buscavet.vercel.app/" />
-        <meta property="twitter:title" content="🐮 Buscavet" />
-        <meta
-          property="twitter:description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
-        <meta property="twitter:image" content="/logo.jpg" />
-
-        <meta name="theme-color" content="#000000" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-        <link rel="icon" href="/favicons/favicon.ico" />
-      </Head>
-
-      <header className={styles.header}>
-        <GiBull />
-        <div>
-          <h1>
-            Busca<span>vet</span>
-          </h1>
-          <h3>Facilitando a vida do produtor</h3>
-        </div>
-      </header>
-
+    <Layout
+      title="Buscavet"
+      description="Facilitando a vida do produtor"
+      url="https://buscavet.vercel.app"
+    >
       <nav className={styles.main}>
         <div className={styles.grid}>
-          <Link href="/">
+          <Link href="/medications">
             <div className={styles.card}>
               <h2>
                 <RiMedicineBottleFill />
@@ -89,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/vaccines">
             <div className={styles.card}>
               <h2>
                 <FaSyringe />
@@ -99,7 +53,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/veterinarians">
             <div className={styles.card}>
               <h2>
                 <FaHandHoldingMedical />
@@ -109,7 +63,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/signup/enterprise">
             <div className={styles.card}>
               <h2>
                 <FaBuilding />
@@ -119,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/signup/producer">
             <div className={`${styles.card} ${styles.bigCard}`}>
               <h2>
                 <GiFarmer />
@@ -130,11 +84,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
           </Link>
         </div>
       </nav>
-
-      <footer className={styles.footer}>
-        <p>🍪 Esse site não utiliza cookies</p>
-      </footer>
-    </div>
+    </Layout>
   );
 };
 
