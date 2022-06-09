@@ -8,7 +8,7 @@ Este é um projeto de código aberto visando ajudar produtores rurais a encontra
 
 Acesse através de: [buscavet.vercel.app](https://buscavet.vercel.app)
 
-## Contribuir com o desenvolvimento
+## Desenvolvimento
 
 Como iniciar o servidor de desenvolvimento:
 
@@ -19,3 +19,5 @@ yarn dev
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
+
+Para fazer contribuições basta abrir [`issues`](https://github.com/TarsiSurdi/buscavet/issues) neste projeto ou criar um `fork` e solicitar uma merge request.
