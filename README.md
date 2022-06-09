@@ -20,4 +20,8 @@ yarn dev
 
 Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
 
-Para fazer contribuições basta abrir [`issues`](https://github.com/TarsiSurdi/buscavet/issues) neste projeto ou criar um `fork` e solicitar uma merge request.
+### Contribuições
+
+Para documentar problemas ou solicitar funcionalidades basta abrir [`issues`](https://github.com/TarsiSurdi/buscavet/issues) neste repositório.
+
+Caso disponha de habilidade técnica para tal, fique à vontade para criar um _fork_, fazer as alterações você mesmo e solicitar um _merge_.
