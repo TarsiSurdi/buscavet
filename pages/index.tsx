@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage<HomeProps> = ({ links }) => {
+const Home: NextPage<HomeProps> = () => {
   return (
     <Layout
       title="Buscavet"
@@ -33,7 +33,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
     >
       <nav className={styles.main}>
         <div className={styles.grid}>
-          <Link href="/">
+          <Link href="/medications">
             <div className={styles.card}>
               <h2>
                 <RiMedicineBottleFill />
@@ -43,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/vaccines">
             <div className={styles.card}>
               <h2>
                 <FaSyringe />
@@ -53,7 +53,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/veterinarians">
             <div className={styles.card}>
               <h2>
                 <FaHandHoldingMedical />
@@ -63,7 +63,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/signup/enterprise">
             <div className={styles.card}>
               <h2>
                 <FaBuilding />
@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ links }) => {
             </div>
           </Link>
 
-          <Link href="/">
+          <Link href="/signup/producer">
             <div className={`${styles.card} ${styles.bigCard}`}>
               <h2>
                 <GiFarmer />

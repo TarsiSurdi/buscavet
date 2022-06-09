@@ -9,7 +9,7 @@ import Footer from "../Footer";
 interface LayoutProps {
   children: ReactNode;
   title: string;
-  description: string;
+  description?: string;
   url: string;
 }
 
