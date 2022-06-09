@@ -15,9 +15,10 @@ const Document = () => {
           rel="stylesheet"
         />
 
-        <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
         <link rel="icon" href="/favicons/favicon.ico" />
+
+        <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
       <body>
         <Main />
