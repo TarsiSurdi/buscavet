@@ -22,6 +22,10 @@ const Layout = ({
   return (
     <>
       <Head>
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+
         <title>{title}</title>
 
         <meta name="title" content={title} />
@@ -38,23 +42,6 @@ const Layout = ({
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content="/logo.jpg" />
-
-        <meta name="theme-color" content="#000000" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
-          rel="stylesheet"
-        />
-
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-        <link rel="icon" href="/favicons/favicon.ico" />
       </Head>
 
       <div className={styles.container}>
