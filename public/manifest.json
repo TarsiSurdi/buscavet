@@ -1,0 +1,27 @@
+{
+  "name": "Buscavet",
+  "short_name": "Buscavet",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/ico",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/ico"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/ico"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
