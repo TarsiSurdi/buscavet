@@ -1,6 +1,4 @@
 import type { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -9,10 +7,11 @@ import {
   FaBuilding,
   FaSyringe,
 } from "react-icons/fa";
-import { GiBull, GiFarmer } from "react-icons/gi";
+import { GiFarmer } from "react-icons/gi";
 import { RiMedicineBottleFill } from "react-icons/ri";
+import Layout from "../components/Layout";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 
 interface HomeProps {
   links: string[];
@@ -26,115 +25,67 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage<HomeProps> = ({ links }) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Buscavet</title>
+    <Layout
+      title="buscavet"
+      description="facilitando a vida do produtor"
+      url="https://buscavet.vercel.app"
+    >
+      <div className={styles.container}>
+        <nav className={styles.main}>
+          <div className={styles.grid}>
+            <Link href="/">
+              <div className={styles.card}>
+                <h2>
+                  <RiMedicineBottleFill />
+                  Medicações
+                </h2>
+                <FaArrowRight size={25} className={styles.arrow} />
+              </div>
+            </Link>
 
-        <meta name="title" content="🐮 Buscavet" />
-        <meta
-          name="description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
+            <Link href="/">
+              <div className={styles.card}>
+                <h2>
+                  <FaSyringe />
+                  Vacinas
+                </h2>
+                <FaArrowRight size={25} className={styles.arrow} />
+              </div>
+            </Link>
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://buscavet.vercel.app/" />
-        <meta property="og:title" content="🐮 Buscavet" />
-        <meta
-          property="og:description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
-        <meta property="og:image" content="/logo.jpg" />
+            <Link href="/">
+              <div className={styles.card}>
+                <h2>
+                  <FaHandHoldingMedical />
+                  Veterinários Habilitados
+                </h2>
+                <FaArrowRight size={25} className={styles.arrow} />
+              </div>
+            </Link>
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://buscavet.vercel.app/" />
-        <meta property="twitter:title" content="🐮 Buscavet" />
-        <meta
-          property="twitter:description"
-          content="Acesso à informação facilitando a vida do produtor"
-        />
-        <meta property="twitter:image" content="/logo.jpg" />
+            <Link href="/">
+              <div className={styles.card}>
+                <h2>
+                  <FaBuilding />
+                  Cadastrar Empresa
+                </h2>
+                <FaArrowRight size={25} className={styles.arrow} />
+              </div>
+            </Link>
 
-        <meta name="theme-color" content="#000000" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-        <link rel="icon" href="/favicons/favicon.ico" />
-      </Head>
-
-      <header className={styles.header}>
-        <GiBull />
-        <div>
-          <h1>
-            Busca<span>vet</span>
-          </h1>
-          <h3>Facilitando a vida do produtor</h3>
-        </div>
-      </header>
-
-      <nav className={styles.main}>
-        <div className={styles.grid}>
-          <Link href="/">
-            <div className={styles.card}>
-              <h2>
-                <RiMedicineBottleFill />
-                Medicações
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/">
-            <div className={styles.card}>
-              <h2>
-                <FaSyringe />
-                Vacinas
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/">
-            <div className={styles.card}>
-              <h2>
-                <FaHandHoldingMedical />
-                Veterinários Habilitados
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/">
-            <div className={styles.card}>
-              <h2>
-                <FaBuilding />
-                Cadastrar Empresa
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/">
-            <div className={`${styles.card} ${styles.bigCard}`}>
-              <h2>
-                <GiFarmer />
-                Cadastrar Produtor
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-        </div>
-      </nav>
-
-      <footer className={styles.footer}>
-        <p>🍪 Esse site não utiliza cookies</p>
-      </footer>
-    </div>
+            <Link href="/">
+              <div className={`${styles.card} ${styles.bigCard}`}>
+                <h2>
+                  <GiFarmer />
+                  Cadastrar Produtor
+                </h2>
+                <FaArrowRight size={25} className={styles.arrow} />
+              </div>
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </Layout>
   );
 };
 
