@@ -1,5 +1,6 @@
 import { FaSyringe } from "react-icons/fa";
 import Layout from "../components/Layout";
+import PageNavigation from "../components/PageNavigation";
 
 const Vaccines = () => {
   return (
@@ -7,8 +8,7 @@ const Vaccines = () => {
       title="Buscavet - Vacinas"
       url="https://buscavet.vercel.app/vaccines"
     >
-      <FaSyringe />
-      <h1>Vacinas</h1>
+      <PageNavigation icon={<FaSyringe />} title="Vacinas" />
     </Layout>
   );
 };

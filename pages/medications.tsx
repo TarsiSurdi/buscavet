@@ -1,5 +1,6 @@
 import { RiMedicineBottleFill } from "react-icons/ri";
 import Layout from "../components/Layout";
+import PageNavigation from "../components/PageNavigation";
 
 const Medications = () => {
   return (
@@ -7,8 +8,7 @@ const Medications = () => {
       title="Buscavet - Medicações"
       url="https://buscavet.vercel.app/medications"
     >
-      <RiMedicineBottleFill />
-      <h1>Medicações</h1>
+      <PageNavigation icon={<RiMedicineBottleFill />} title="Medicações" />
     </Layout>
   );
 };

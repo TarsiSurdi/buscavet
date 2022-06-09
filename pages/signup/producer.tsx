@@ -1,5 +1,6 @@
 import { GiFarmer } from "react-icons/gi";
 import Layout from "../../components/Layout";
+import PageNavigation from "../../components/PageNavigation";
 
 const Producer = () => {
   return (
@@ -7,8 +8,7 @@ const Producer = () => {
       title="Buscavet - Cadastrar Produtor"
       url="https://buscavet.vercel.app/signup/producer"
     >
-      <GiFarmer />
-      <h1>Cadastrar Produtor</h1>
+      <PageNavigation icon={<GiFarmer />} title="Cadastrar Produtor" />
     </Layout>
   );
 };
