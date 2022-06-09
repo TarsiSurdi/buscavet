@@ -7,6 +7,7 @@ import {
   FaBuilding,
   FaSyringe,
 } from "react-icons/fa";
+
 import { GiFarmer } from "react-icons/gi";
 import { RiMedicineBottleFill } from "react-icons/ri";
 import Layout from "../components/Layout";
@@ -30,61 +31,59 @@ const Home: NextPage<HomeProps> = ({ links }) => {
       description="facilitando a vida do produtor"
       url="https://buscavet.vercel.app"
     >
-      <div className={styles.container}>
-        <nav className={styles.main}>
-          <div className={styles.grid}>
-            <Link href="/">
-              <div className={styles.card}>
-                <h2>
-                  <RiMedicineBottleFill />
-                  Medicações
-                </h2>
-                <FaArrowRight size={25} className={styles.arrow} />
-              </div>
-            </Link>
+      <nav className={styles.main}>
+        <div className={styles.grid}>
+          <Link href="/">
+            <div className={styles.card}>
+              <h2>
+                <RiMedicineBottleFill />
+                Medicações
+              </h2>
+              <FaArrowRight size={25} className={styles.arrow} />
+            </div>
+          </Link>
 
-            <Link href="/">
-              <div className={styles.card}>
-                <h2>
-                  <FaSyringe />
-                  Vacinas
-                </h2>
-                <FaArrowRight size={25} className={styles.arrow} />
-              </div>
-            </Link>
+          <Link href="/">
+            <div className={styles.card}>
+              <h2>
+                <FaSyringe />
+                Vacinas
+              </h2>
+              <FaArrowRight size={25} className={styles.arrow} />
+            </div>
+          </Link>
 
-            <Link href="/">
-              <div className={styles.card}>
-                <h2>
-                  <FaHandHoldingMedical />
-                  Veterinários Habilitados
-                </h2>
-                <FaArrowRight size={25} className={styles.arrow} />
-              </div>
-            </Link>
+          <Link href="/">
+            <div className={styles.card}>
+              <h2>
+                <FaHandHoldingMedical />
+                Veterinários Habilitados
+              </h2>
+              <FaArrowRight size={25} className={styles.arrow} />
+            </div>
+          </Link>
 
-            <Link href="/">
-              <div className={styles.card}>
-                <h2>
-                  <FaBuilding />
-                  Cadastrar Empresa
-                </h2>
-                <FaArrowRight size={25} className={styles.arrow} />
-              </div>
-            </Link>
+          <Link href="/">
+            <div className={styles.card}>
+              <h2>
+                <FaBuilding />
+                Cadastrar Empresa
+              </h2>
+              <FaArrowRight size={25} className={styles.arrow} />
+            </div>
+          </Link>
 
-            <Link href="/">
-              <div className={`${styles.card} ${styles.bigCard}`}>
-                <h2>
-                  <GiFarmer />
-                  Cadastrar Produtor
-                </h2>
-                <FaArrowRight size={25} className={styles.arrow} />
-              </div>
-            </Link>
-          </div>
-        </nav>
-      </div>
+          <Link href="/">
+            <div className={`${styles.card} ${styles.bigCard}`}>
+              <h2>
+                <GiFarmer />
+                Cadastrar Produtor
+              </h2>
+              <FaArrowRight size={25} className={styles.arrow} />
+            </div>
+          </Link>
+        </div>
+      </nav>
     </Layout>
   );
 };

@@ -47,6 +47,10 @@ const Layout = ({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+          rel="stylesheet"
+        />
 
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
