@@ -29,19 +29,30 @@ const Home: NextPage<HomeProps> = ({ links }) => {
     <div className={styles.container}>
       <Head>
         <title>Buscavet</title>
+
+        <meta name="title" content="🐮 Buscavet" />
         <meta
           name="description"
           content="Acesso à informação facilitando a vida do produtor"
         />
 
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://buscavet.vercel.app/" />
+        <meta property="og:title" content="🐮 Buscavet" />
         <meta
           property="og:description"
-          content="Facilitando a vida do produtor"
+          content="Acesso à informação facilitando a vida do produtor"
         />
+        <meta property="og:image" content="/logo.jpg" />
 
-        <meta property="og:title" content="🐮 Buscavet" />
-
-        <meta property="og:Image" content="/logo.jpg" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://buscavet.vercel.app/" />
+        <meta property="twitter:title" content="🐮 Buscavet" />
+        <meta
+          property="twitter:description"
+          content="Acesso à informação facilitando a vida do produtor"
+        />
+        <meta property="twitter:image" content="/logo.jpg" />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
