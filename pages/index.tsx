@@ -54,10 +54,16 @@ const Home: NextPage<HomeProps> = ({ links }) => {
         />
         <meta property="twitter:image" content="/logo.jpg" />
 
-        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
-        <link rel="apple-touch-icon" href="/icon.png" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
