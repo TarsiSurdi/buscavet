@@ -27,8 +27,8 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage<HomeProps> = ({ links }) => {
   return (
     <Layout
-      title="buscavet"
-      description="facilitando a vida do produtor"
+      title="Buscavet"
+      description="Facilitando a vida do produtor"
       url="https://buscavet.vercel.app"
     >
       <nav className={styles.main}>
