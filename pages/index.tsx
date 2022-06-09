@@ -33,6 +33,16 @@ const Home: NextPage<HomeProps> = ({ links }) => {
           name="description"
           content="Acesso à informação facilitando a vida do produtor"
         />
+
+        <meta
+          property="og:description"
+          content="Facilitando a vida do produtor"
+        />
+
+        <meta property="og:title" content="🐮 Buscavet" />
+
+        <meta property="og:Image" content="/logo.jpg" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
