@@ -10,7 +10,7 @@ const Header = () => {
         <h1>
           Busca<span>vet</span>
         </h1>
-        <h3>Facilitando a vida do produtor</h3>
+        <h2>Facilitando a vida do produtor</h2>
       </div>
     </header>
   );

@@ -1,3 +1,4 @@
+import { Button, Card, Container, Grid, Text } from "@nextui-org/react";
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 
@@ -10,80 +11,37 @@ import {
 
 import { GiFarmer } from "react-icons/gi";
 import { RiMedicineBottleFill } from "react-icons/ri";
+import { MdError } from "react-icons/md";
+
 import Layout from "../components/Layout";
+import NavButton from "../components/NavButton";
+import NavGridContainer from "../components/NavGridContainer";
 
-import styles from "../styles/Home.module.scss";
-
-interface HomeProps {
-  links: string[];
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  };
-};
-
-const Home: NextPage<HomeProps> = () => {
+const Home: NextPage = () => {
   return (
     <Layout
       title="Buscavet"
       description="Facilitando a vida do produtor"
       url="https://buscavet.vercel.app"
     >
-      <nav className={styles.main}>
-        <div className={styles.grid}>
-          <Link href="/medications">
-            <div className={styles.card}>
-              <h2>
-                <RiMedicineBottleFill />
-                Medicações
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/vaccines">
-            <div className={styles.card}>
-              <h2>
-                <FaSyringe />
-                Vacinas
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/veterinarians">
-            <div className={styles.card}>
-              <h2>
-                <FaHandHoldingMedical />
-                Veterinários Habilitados
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/signup/enterprise">
-            <div className={styles.card}>
-              <h2>
-                <FaBuilding />
-                Cadastrar Empresa
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-
-          <Link href="/signup/producer">
-            <div className={`${styles.card} ${styles.bigCard}`}>
-              <h2>
-                <GiFarmer />
-                Cadastrar Produtor
-              </h2>
-              <FaArrowRight size={25} className={styles.arrow} />
-            </div>
-          </Link>
-        </div>
-      </nav>
+      <Container sm gap={2} css={{ mt: "$10" }}>
+        <NavGridContainer>
+          <NavButton text="Medicações" icon={<RiMedicineBottleFill />} />
+          <NavButton text="Vacinas" icon={<FaSyringe />} />
+        </NavGridContainer>
+        <NavGridContainer>
+          <NavButton
+            text="Veterinários Habilitados"
+            icon={<FaHandHoldingMedical />}
+          />
+        </NavGridContainer>
+        <NavGridContainer>
+          <NavButton text="Cadastrar Empresa" icon={<FaBuilding />} />
+        </NavGridContainer>
+        <NavGridContainer>
+          <NavButton text="Cadastrar Produtor" icon={<GiFarmer />} />
+        </NavGridContainer>
+      </Container>
     </Layout>
   );
 };
