@@ -1,13 +1,15 @@
 import { Card, Container, Grid, Text } from "@nextui-org/react";
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 interface NavButtonProps {
   text: string;
   icon: ReactNode;
+  link: string;
 }
 
-const NavButton: FC<NavButtonProps> = ({ text, icon }) => {
+const NavButton: FC<NavButtonProps> = ({ text, icon, link }) => {
   return (
     <Grid xs>
       <Card
@@ -22,26 +24,28 @@ const NavButton: FC<NavButtonProps> = ({ text, icon }) => {
         }}
       >
         <Card.Body css={{ ai: "center", jc: "space-between", fd: "row" }}>
-          <Container
-            css={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              pl: "$0",
-              color: "$black",
-            }}
-          >
-            {icon}
-            <Text
-              h4
+          <Link href={link}>
+            <Container
               css={{
-                ml: "$5",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                pl: "$0",
+                color: "$black",
               }}
             >
-              {text}
-            </Text>
-          </Container>
-          <FaArrowRight />
+              {icon}
+              <Text
+                h4
+                css={{
+                  ml: "$5",
+                }}
+              >
+                {text}
+              </Text>
+            </Container>
+            <FaArrowRight />
+          </Link>
         </Card.Body>
       </Card>
     </Grid>

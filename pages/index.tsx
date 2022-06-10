@@ -2,16 +2,10 @@ import { Button, Card, Container, Grid, Text } from "@nextui-org/react";
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 
-import {
-  FaArrowRight,
-  FaHandHoldingMedical,
-  FaBuilding,
-  FaSyringe,
-} from "react-icons/fa";
+import { FaHandHoldingMedical, FaBuilding, FaSyringe } from "react-icons/fa";
 
 import { GiFarmer } from "react-icons/gi";
 import { RiMedicineBottleFill } from "react-icons/ri";
-import { MdError } from "react-icons/md";
 
 import Layout from "../components/Layout";
 import NavButton from "../components/NavButton";
@@ -26,20 +20,33 @@ const Home: NextPage = () => {
     >
       <Container sm gap={2} css={{ mt: "$10" }}>
         <NavGridContainer>
-          <NavButton text="Medicações" icon={<RiMedicineBottleFill />} />
-          <NavButton text="Vacinas" icon={<FaSyringe />} />
+          <NavButton
+            text="Medicações"
+            icon={<RiMedicineBottleFill />}
+            link="/medications"
+          />
+          <NavButton text="Vacinas" icon={<FaSyringe />} link="/vaccines" />
         </NavGridContainer>
         <NavGridContainer>
           <NavButton
             text="Veterinários Habilitados"
             icon={<FaHandHoldingMedical />}
+            link="/veterinarians"
           />
         </NavGridContainer>
         <NavGridContainer>
-          <NavButton text="Cadastrar Empresa" icon={<FaBuilding />} />
+          <NavButton
+            text="Cadastrar Empresa"
+            icon={<FaBuilding />}
+            link="/signup/enterprise"
+          />
         </NavGridContainer>
         <NavGridContainer>
-          <NavButton text="Cadastrar Produtor" icon={<GiFarmer />} />
+          <NavButton
+            text="Cadastrar Produtor"
+            icon={<GiFarmer />}
+            link="signup/producer"
+          />
         </NavGridContainer>
       </Container>
     </Layout>
