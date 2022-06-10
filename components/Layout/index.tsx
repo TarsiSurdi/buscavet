@@ -2,8 +2,6 @@ import { ReactNode } from "react";
 import Head from "next/head";
 
 import Header from "../Header";
-
-import styles from "./Layout.module.scss";
 import Footer from "../Footer";
 import { Container } from "@nextui-org/react";
 
