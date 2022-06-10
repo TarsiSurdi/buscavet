@@ -12,19 +12,19 @@ interface NavButtonProps {
 const NavButton: FC<NavButtonProps> = ({ text, icon, link }) => {
   return (
     <Grid xs>
-      <Card
-        isPressable
-        isHoverable
-        variant="bordered"
-        css={{
-          "&:hover": {
-            borderColor: "rgb(66, 168, 66)",
-            color: "rgb(66, 168, 66)",
-          },
-        }}
-      >
-        <Card.Body css={{ ai: "center", jc: "space-between", fd: "row" }}>
-          <Link href={link}>
+      <Link href={link}>
+        <Card
+          isPressable
+          isHoverable
+          variant="bordered"
+          css={{
+            "&:hover": {
+              borderColor: "rgb(66, 168, 66)",
+              color: "rgb(66, 168, 66)",
+            },
+          }}
+        >
+          <Card.Body css={{ ai: "center", jc: "space-between", fd: "row" }}>
             <Container
               css={{
                 display: "flex",
@@ -45,9 +45,9 @@ const NavButton: FC<NavButtonProps> = ({ text, icon, link }) => {
               </Text>
             </Container>
             <FaArrowRight />
-          </Link>
-        </Card.Body>
-      </Card>
+          </Card.Body>
+        </Card>
+      </Link>
     </Grid>
   );
 };
