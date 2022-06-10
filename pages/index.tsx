@@ -21,29 +21,33 @@ const Home: NextPage = () => {
         <NavGridContainer>
           <NavButton
             text="Medicações"
-            icon={<RiMedicineBottleFill />}
+            icon={<RiMedicineBottleFill size="1.25em" />}
             link="/medications"
           />
-          <NavButton text="Vacinas" icon={<FaSyringe />} link="/vaccines" />
+          <NavButton
+            text="Vacinas"
+            icon={<FaSyringe size="1.25em" />}
+            link="/vaccines"
+          />
         </NavGridContainer>
         <NavGridContainer>
           <NavButton
             text="Veterinários Habilitados"
-            icon={<FaHandHoldingMedical />}
+            icon={<FaHandHoldingMedical size="1.25em" />}
             link="/veterinarians"
           />
         </NavGridContainer>
         <NavGridContainer>
           <NavButton
             text="Cadastrar Empresa"
-            icon={<FaBuilding />}
+            icon={<FaBuilding size="1.25em" />}
             link="/signup/enterprise"
           />
         </NavGridContainer>
         <NavGridContainer>
           <NavButton
             text="Cadastrar Produtor"
-            icon={<GiFarmer />}
+            icon={<GiFarmer size="1.25em" />}
             link="signup/producer"
           />
         </NavGridContainer>

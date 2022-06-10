@@ -36,7 +36,7 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicons/favicon.ico" />
 
           <link rel="manifest" href="/manifest.webmanifest" />
-          {/* {CssBaseline.flush()} */}
+          {CssBaseline.flush()}
         </Head>
         <body>
           <Main />

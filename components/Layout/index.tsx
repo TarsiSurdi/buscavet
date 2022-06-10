@@ -5,6 +5,7 @@ import Header from "../Header";
 
 import styles from "./Layout.module.scss";
 import Footer from "../Footer";
+import { Container } from "@nextui-org/react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -44,11 +45,13 @@ const Layout = ({
         <meta property="twitter:image" content="/logo.jpg" />
       </Head>
 
-      <div className={styles.container}>
+      <Container fluid css={{ padding: "$0" }}>
         <Header />
-        <main className={styles.main}>{children}</main>
+        <Container sm as="main">
+          {children}
+        </Container>
         <Footer />
-      </div>
+      </Container>
     </>
   );
 };

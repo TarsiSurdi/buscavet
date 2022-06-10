@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Text } from "@nextui-org/react";
+import { Card, Container, Grid, Spacer, Text } from "@nextui-org/react";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { FaArrowRight } from "react-icons/fa";
@@ -24,27 +24,32 @@ const NavButton: FC<NavButtonProps> = ({ text, icon, link }) => {
             },
           }}
         >
-          <Card.Body css={{ ai: "center", jc: "space-between", fd: "row" }}>
-            <Container
-              css={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                pl: "$0",
-                color: "$black",
-              }}
-            >
-              {icon}
-              <Text
-                h4
+          <Card.Body>
+            <Grid.Container alignItems="center">
+              <Grid
+                xs
+                alignItems="center"
                 css={{
-                  ml: "$5",
+                  color: "$black",
+                  "@xsMax": {
+                    jc: "center",
+                  },
                 }}
               >
-                {text}
-              </Text>
-            </Container>
-            <FaArrowRight />
+                {icon}
+                <Spacer x={0.5} />
+                <Text h4>{text}</Text>
+              </Grid>
+              <Grid
+                css={{
+                  "@xsMax": {
+                    display: "none",
+                  },
+                }}
+              >
+                <FaArrowRight />
+              </Grid>
+            </Grid.Container>
           </Card.Body>
         </Card>
       </Link>
