@@ -1,6 +1,5 @@
-import { Button, Card, Container, Grid, Text } from "@nextui-org/react";
-import type { NextPage, GetStaticProps } from "next";
-import Link from "next/link";
+import { Container } from "@nextui-org/react";
+import type { NextPage } from "next";
 
 import { FaHandHoldingMedical, FaBuilding, FaSyringe } from "react-icons/fa";
 
