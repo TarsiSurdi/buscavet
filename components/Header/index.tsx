@@ -3,126 +3,66 @@ import { GiBull } from "react-icons/gi";
 
 const Header = () => {
   return (
-    <>
-      <Container
+    <div style={{ width: "100%" }}>
+      <Grid.Container
+        alignItems="center"
+        gap={3}
         css={{
-          maxWidth: "100vw",
+          bgColor: "$black",
           p: "$0",
-          // "@xsMax": {
-          //   display: "none",
-          // },
+          m: "$0",
+          minWidth: "100vw",
+          width: "100%",
         }}
-        as="header"
       >
-        <Grid.Container
-          alignItems="center"
-          gap={3}
+        <Grid
           css={{
-            bgColor: "$black",
+            display: "flex",
+            fd: "row",
             pb: "$0",
+            pr: "$40",
           }}
+          xs
         >
-          <Grid
+          <GiBull
+            color="white"
+            style={{ minWidth: "60px", minHeight: "60px" }}
+          />
+          <Spacer x={1} />
+          <Text
+            h1
             css={{
-              display: "flex",
-              fd: "row",
-              pb: "$0",
-            }}
-            xs
-          >
-            <GiBull
-              color="white"
-              style={{ minWidth: "60px", minHeight: "60px" }}
-            />
-            <Spacer x={1} />
-            <Text
-              h1
-              css={{
-                fontFamily: "Fugaz One",
-                fs: "$xl5",
-                tt: "uppercase",
-                color: "$accents0",
-              }}
-            >
-              Busca
-              <Text
-                span
-                css={{
-                  tt: "uppercase",
-                  color: "#52d452",
-                  mr: "$18",
-                }}
-              >
-                vet
-              </Text>
-            </Text>
-          </Grid>
-          <Grid css={{ pt: "$0", display: "flex", fd: "row" }}>
-            <Text h2 css={{ color: "$gray600", fontSize: "16pt" }}>
-              Facilitando a vida do produtor
-            </Text>
-          </Grid>
-        </Grid.Container>
-      </Container>
-
-      {/* <Container
-        // Smaller version of the header
-        css={{
-          maxWidth: "100vw",
-          p: "$0",
-          display: "none",
-          "@xsMax": {
-            display: "block",
-          },
-        }}
-        as="header"
-      >
-        <Grid.Container
-          alignItems="center"
-          gap={3}
-          css={{
-            bgColor: "$black",
-            pb: "$0",
-          }}
-        >
-          <Grid
-            xs
-            css={{
-              display: "flex",
-              fd: "row",
+              fontFamily: "Fugaz One",
+              fs: "$xl5",
+              tt: "uppercase",
+              color: "$accents0",
             }}
           >
-            <GiBull size={70} color="white" />
-            <Spacer x={1} />
+            Busca
             <Text
-              h1
+              span
               css={{
-                fontFamily: "Fugaz One",
-                fs: "$xl5",
                 tt: "uppercase",
-                color: "$accents0",
+                color: "#52d452",
               }}
             >
-              Busca
-              <Text
-                span
-                css={{
-                  tt: "uppercase",
-                  color: "#52d452",
-                }}
-              >
-                vet
-              </Text>
+              vet
             </Text>
-          </Grid>
-          <Grid css={{ pt: "$0" }}>
-            <Text h2 css={{ color: "$gray600", fontSize: "$xl2" }}>
-              Facilitando a vida do produtor
-            </Text>
-          </Grid>
-        </Grid.Container>
-      </Container> */}
-    </>
+          </Text>
+        </Grid>
+        <Grid css={{ pt: "$0", display: "flex", fd: "row" }}>
+          <Text
+            h2
+            css={{
+              color: "$gray600",
+              fontSize: "16pt",
+            }}
+          >
+            Facilitando a vida do produtor
+          </Text>
+        </Grid>
+      </Grid.Container>
+    </div>
   );
 };
 

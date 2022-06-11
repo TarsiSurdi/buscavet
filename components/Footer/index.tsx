@@ -1,9 +1,13 @@
+import { Container, Text } from "@nextui-org/react";
+
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <p>🍪 Esse site não utiliza cookies</p>
+      <Text h5 css={{ ta: "center" }}>
+        🍪 Esse site não utiliza cookies
+      </Text>
     </footer>
   );
 };

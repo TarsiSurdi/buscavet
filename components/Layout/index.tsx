@@ -43,13 +43,21 @@ const Layout = ({
         <meta property="twitter:image" content="/logo.jpg" />
       </Head>
 
-      <Container css={{ padding: "$0", margin: "$0", minWidth: "100vw" }}>
+      <div>
         <Header />
-        <Container sm as="main">
+        <Container
+          sm
+          as="main"
+          css={{
+            "@xsMax": {
+              padding: "$0",
+            },
+          }}
+        >
           {children}
         </Container>
         <Footer />
-      </Container>
+      </div>
     </>
   );
 };
