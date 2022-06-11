@@ -3,7 +3,15 @@ import { GiBull } from "react-icons/gi";
 
 const Header = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div
+      style={{
+        width: "100%",
+        position: "sticky",
+        top: "0",
+        left: "0",
+        zIndex: "999",
+      }}
+    >
       <Grid.Container
         alignItems="center"
         gap={3}
