@@ -1,5 +1,7 @@
+import { Container } from "@nextui-org/react";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import Layout from "../components/Layout";
+import PageNavigation from "../components/PageNavigation";
 
 const Veterinarians = () => {
   return (
@@ -7,8 +9,12 @@ const Veterinarians = () => {
       title="Buscavet - Veterinários"
       url="https://buscavet.vercel.app/veterinarians"
     >
-      <FaHandHoldingMedical />
-      <h1>Veterinários</h1>
+      <Container sm>
+        <PageNavigation
+          icon={<FaHandHoldingMedical />}
+          title="Veterinários Habilitados"
+        />
+      </Container>
     </Layout>
   );
 };
