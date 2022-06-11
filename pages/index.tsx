@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       description="Facilitando a vida do produtor"
       url="https://buscavet.vercel.app"
     >
-      <Container sm gap={2} css={{ mt: "$10" }}>
+      <Container sm gap={2} css={{ mt: "$10", pb: "$20" }}>
         <NavGridContainer>
           <NavButton
             text="Medicações"

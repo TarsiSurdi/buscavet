@@ -10,7 +10,7 @@ const Medications = () => {
       title="Buscavet - Medicações"
       url="https://buscavet.vercel.app/medications"
     >
-      <Container sm>
+      <Container sm css={{ pb: "$20" }}>
         <PageNavigation icon={<RiMedicineBottleFill />} title="Medicações" />
         <Table
           aria-label="Example table with static content"
