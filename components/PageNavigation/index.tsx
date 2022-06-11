@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Spacer, Text } from "@nextui-org/react";
 import { ReactNode } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -18,9 +19,22 @@ const PageNavigation = ({ icon, title }: PageNavigationProps) => {
           <p>Voltar ao início</p>
         </div>
       </Link>
-      <div className={styles.title}>
-        {icon}
-        <h1>{title}</h1>
+      <div style={{ marginBottom: "1em" }}>
+        <Text
+          h2
+          css={{
+            dflex: "flex-start",
+            ai: "center",
+            fontWeight: "$bold",
+            "@xsMax": {
+              fs: "$xl2",
+            },
+          }}
+        >
+          {icon}
+          <Spacer x={0.5} />
+          {title}
+        </Text>
       </div>
     </nav>
   );
