@@ -81,6 +81,7 @@ const Supplements: NextPage<SupplementsProps> = ({ items }) => {
   const [selected, setSelected] = useState(
     new Set(["Suplementos" as Categorias])
   );
+  const [page, setPage] = useState(1);
 
   const getSupplements = (keys: Set<string>) => {
     const key = Array.from(keys)[0];
@@ -119,6 +120,7 @@ const Supplements: NextPage<SupplementsProps> = ({ items }) => {
                         .replaceAll("_", "") as Categorias,
                     ])
                   );
+                  setPage(1);
                 }}
               >
                 <Dropdown.Item key="Aditivos">Aditivos</Dropdown.Item>
@@ -152,7 +154,9 @@ const Supplements: NextPage<SupplementsProps> = ({ items }) => {
                 noMargin
                 align="center"
                 rowsPerPage={5}
-                onPageChange={(page) => console.log(page)}
+                page={page}
+                onPageChange={setPage}
+                total={Math.ceil(getSupplements(selected).length / 5)}
               />
             </Table>
           </Grid>

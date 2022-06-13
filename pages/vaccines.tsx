@@ -68,6 +68,7 @@ const Vaccines: NextPage<VaccinesProps> = ({ items }) => {
   const [selected, setSelected] = useState(
     new Set(["Clostridiose" as Categorias])
   );
+  const [page, setPage] = useState(1);
 
   const getVaccines = (keys: Set<string>) => {
     const key = Array.from(keys)[0];
@@ -103,6 +104,7 @@ const Vaccines: NextPage<VaccinesProps> = ({ items }) => {
                         .replaceAll("_", "") as Categorias,
                     ])
                   );
+                  setPage(1);
                 }}
               >
                 <Dropdown.Item key="Brucelose">Brucelose</Dropdown.Item>
@@ -132,7 +134,9 @@ const Vaccines: NextPage<VaccinesProps> = ({ items }) => {
                 noMargin
                 align="center"
                 rowsPerPage={5}
-                onPageChange={(page) => console.log(page)}
+                page={page}
+                onPageChange={setPage}
+                total={Math.ceil(getVaccines(selected).length / 5)}
               />
             </Table>
           </Grid>

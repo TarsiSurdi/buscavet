@@ -50,13 +50,7 @@ const Disinfectants: NextPage = () => {
               <Table.Cell>Quatermon 50%</Table.Cell>
             </Table.Row>
           </Table.Body>
-          <Table.Pagination
-            shadow
-            noMargin
-            align="center"
-            rowsPerPage={5}
-            onPageChange={(page) => console.log(page)}
-          />
+          <Table.Pagination shadow noMargin align="center" rowsPerPage={5} />
         </Table>
       </Container>
     </Layout>

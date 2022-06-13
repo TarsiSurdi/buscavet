@@ -1,6 +1,6 @@
 import { Container, Dropdown, Grid, Table } from "@nextui-org/react";
 import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RiMedicineBottleFill } from "react-icons/ri";
 
 import Layout from "../components/Layout";
@@ -230,6 +230,7 @@ export const getStaticProps: GetStaticProps = () => {
 
 const Medications: NextPage<MedicationsProps> = ({ items }) => {
   const [selected, setSelected] = useState(new Set(["Anestésicos"]));
+  const [page, setPage] = useState(1);
 
   const getMedications = (keys: Set<string>) => {
     const key = Array.from(keys)[0];
@@ -261,6 +262,7 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
                 disallowEmptySelection
                 selectedKeys={selected}
                 onSelectionChange={(keys) => {
+                  setPage(1);
                   setSelected(
                     new Set([Array.from(keys).join(", ").replaceAll("_", "")])
                   );
@@ -338,7 +340,9 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
                 noMargin
                 align="center"
                 rowsPerPage={5}
-                onPageChange={(page) => console.log(page)}
+                page={page}
+                onPageChange={setPage}
+                total={Math.ceil(getMedications(selected).length / 5)}
               />
             </Table>
           </Grid>
