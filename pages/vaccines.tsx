@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = () => {
 };
 
 const Vaccines: NextPage<VaccinesProps> = ({ items }) => {
-  const [selected, setSelected] = useState(new Set(["Brucelose"]));
+  const [selected, setSelected] = useState(new Set(["Clostridiose"]));
 
   const getVaccines = (keys: Set<string>) => {
     const key = Array.from(keys)[0];
