@@ -1,53 +1,226 @@
 import { Container, Dropdown, Grid, Table } from "@nextui-org/react";
 import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { RiMedicineBottleFill } from "react-icons/ri";
 
 import Layout from "../components/Layout";
 import PageNavigation from "../components/PageNavigation";
 
+type Categorias =
+  | "Anestésicos"
+  | "Antissépticos"
+  | "Antiarrítmicos"
+  | "Inotrópicos"
+  | "Vasculares"
+  | "Antipapilomatosos"
+  | "Cicatrizantes"
+  | "Dermatológicos"
+  | "Anticoagulantes"
+  | "Hemostáticos"
+  | "Anticonvulsivantes"
+  | "Antiespasmódicos"
+  | "Relaxantes Musculares"
+  | "Intramamários"
+  | "Outros"
+  | "Broncodilatadores"
+  | "Urinários";
+
 interface MedicationsProps {
   items: {
-    anestesicos: {
-      colunas: string[];
-      items: {
-        nomeComercial?: string;
-        principioAtivo: string;
-      }[];
-    };
+    Anestésicos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Antissépticos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Antiarrítmicos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Inotrópicos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Vasculares: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Antipapilomatosos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Cicatrizantes: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Dermatológicos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Anticoagulantes: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Hemostáticos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Ansiolíticos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Anticonvulsivantes: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Antiespasmódicos: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    "Relaxantes Musculares": {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Intramamários: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Outros: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Broncodilatadores: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
+    Urinários: {
+      nomeComercial?: string;
+      principioAtivo: string;
+    }[];
   };
 }
 
-export const getStaticProps: GetStaticProps = (ctx) => {
+export const getStaticProps: GetStaticProps = () => {
   const data: GetStaticPropsResult<MedicationsProps> = {
     props: {
       items: {
-        anestesicos: {
-          colunas: ["Princípio Ativo", "Nome Comercial"],
-          items: [
-            { principioAtivo: "Propofol" },
-            { principioAtivo: "Tiopental" },
-            { principioAtivo: "Alotano" },
-            { principioAtivo: "Isoflurano" },
-            { principioAtivo: "Cevoflurano" },
-            { nomeComercial: "Anestésico Bravet", principioAtivo: "Lidocaína" },
-            { nomeComercial: "Anestex", principioAtivo: "Lidocaína" },
-            { nomeComercial: "Lidofarm", principioAtivo: "Lidocaína" },
-            { principioAtivo: "Atipamezol" },
-            { principioAtivo: "Iombina" },
-            { principioAtivo: "Naltrexona" },
-            { nomeComercial: "Acedan", principioAtivo: "Acepromazina" },
-            { principioAtivo: "Acepran (1%)" },
-            { nomeComercial: "Calmiun", principioAtivo: "Xilazina" },
-            { nomeComercial: "Dopaser", principioAtivo: "Xilazina" },
-            { nomeComercial: "Detomidin", principioAtivo: "Detomidina" },
-            { nomeComercial: "Detovet", principioAtivo: "Detomidina" },
-            {
-              nomeComercial: "Aceproven Injetável",
-              principioAtivo: "Acepromazina",
-            },
-          ],
-        },
+        Anestésicos: [
+          { principioAtivo: "Propofol" },
+          { principioAtivo: "Tiopental" },
+          { principioAtivo: "Alotano" },
+          { principioAtivo: "Isoflurano" },
+          { principioAtivo: "Cevoflurano" },
+          { nomeComercial: "Anestésico Bravet", principioAtivo: "Lidocaína" },
+          { nomeComercial: "Anestex", principioAtivo: "Lidocaína" },
+          { nomeComercial: "Lidofarm", principioAtivo: "Lidocaína" },
+          { principioAtivo: "Atipamezol" },
+          { principioAtivo: "Iombina" },
+          { principioAtivo: "Naltrexona" },
+          { nomeComercial: "Acedan", principioAtivo: "Acepromazina" },
+          { principioAtivo: "Acepran (1%)" },
+          { nomeComercial: "Calmiun", principioAtivo: "Xilazina" },
+          { nomeComercial: "Dopaser", principioAtivo: "Xilazina" },
+          { nomeComercial: "Detomidin", principioAtivo: "Detomidina" },
+          { nomeComercial: "Detovet", principioAtivo: "Detomidina" },
+          {
+            nomeComercial: "Aceproven Injetável",
+            principioAtivo: "Acepromazina",
+          },
+        ],
+        Antissépticos: [
+          { principioAtivo: "Azul de metileno" },
+          { principioAtivo: "Clorexidina" },
+          { principioAtivo: "Clorexidina", nomeComercial: "Diprodeep" },
+          {
+            principioAtivo: "Monometilol dimetil hidantoína",
+            nomeComercial: "Formoped",
+          },
+          { principioAtivo: "Clorexidina", nomeComercial: "Furanil" },
+          { principioAtivo: "Desconhecido", nomeComercial: "Iodo Farm" },
+          {
+            principioAtivo: "Desconhecido",
+            nomeComercial: "Pasta para ordenha",
+          },
+          { principioAtivo: "Desconhecido", nomeComercial: "Umbicura" },
+        ],
+        Antiarrítmicos: [
+          { principioAtivo: "Amiodarona" },
+          { principioAtivo: "Digitoxina" },
+          { principioAtivo: "Procaínamida" },
+        ],
+        Inotrópicos: [{ principioAtivo: "Cloridrato de Verapamil" }],
+        Vasculares: [
+          { principioAtivo: "Cloridrato de dopamina" },
+          { principioAtivo: "Diltiazem" },
+          { principioAtivo: "Ramipril" },
+        ],
+        Antipapilomatosos: [
+          { principioAtivo: "Clorobutanol", nomeComercial: "Verrudel" },
+        ],
+        Cicatrizantes: [
+          { principioAtivo: "Óxido de zinco", nomeComercial: "Alantol" },
+          {
+            principioAtivo: "Desconhecido",
+            nomeComercial: "Matabicheira LAB ",
+          },
+          { principioAtivo: "Desconhecido", nomeComercial: "Pomada Prado" },
+          {
+            principioAtivo: "Desconhecido",
+            nomeComercial: "Unguento Plus aerosol",
+          },
+          { principioAtivo: "Desconhecido", nomeComercial: "Unguento Pearson" },
+        ],
+        Dermatológicos: [
+          { principioAtivo: "Cicatrizantol" },
+          { principioAtivo: "Clorexidina", nomeComercial: "Organnact Prata" },
+        ],
+        Anticoagulantes: [
+          { principioAtivo: "Dalteparina" },
+          { principioAtivo: "Heparina sódica" },
+          { principioAtivo: "Varfarina sódica" },
+        ],
+        Hemostáticos: [{ principioAtivo: "Ácido Tranexâmico" }],
+        Ansiolíticos: [
+          { principioAtivo: "Diazepam" },
+          { principioAtivo: "Midazolam" },
+        ],
+        Anticonvulsivantes: [
+          { principioAtivo: "Gabapentina" },
+          { principioAtivo: "Fenitoína sódica" },
+        ],
+        Antiespasmódicos: [{ principioAtivo: "Sulfato de atropina" }],
+        "Relaxantes Musculares": [
+          { principioAtivo: "Desconhecido", nomeComercial: "Geloflex" },
+          { principioAtivo: "Metocarbamol" },
+          { principioAtivo: "Xilazin" },
+        ],
+        Intramamários: [
+          { nomeComercial: "Biomast selante", principioAtivo: "Desconhecido" },
+          { nomeComercial: "Intrasec VS", principioAtivo: "Desconhecido" },
+          { nomeComercial: "Mastclin", principioAtivo: "Desconhecido" },
+          {
+            nomeComercial: "Mastite Clínica VL",
+            principioAtivo: "Desconhecido",
+          },
+          { nomeComercial: "Sela teto", principioAtivo: "Desconhecido" },
+        ],
+        Outros: [
+          { principioAtivo: "Ocitocina" },
+          { principioAtivo: "Desconhecido", nomeComercial: "Óleo Canforado" },
+          { principioAtivo: "Tristezina" },
+        ],
+        Broncodilatadores: [
+          { principioAtivo: "Clembuterol" },
+          { principioAtivo: "Salbutamol" },
+          { principioAtivo: "Teofilina" },
+        ],
+        Urinários: [
+          { principioAtivo: "Furosemida", nomeComercial: "Diurax" },
+          { principioAtivo: "Furosemida" },
+          { principioAtivo: "Manitol" },
+        ],
       },
     },
   };
@@ -56,14 +229,20 @@ export const getStaticProps: GetStaticProps = (ctx) => {
 };
 
 const Medications: NextPage<MedicationsProps> = ({ items }) => {
-  const [selected, setSelected] = useState(
-    new Set(["Selecione uma medicação"])
-  );
+  const [selected, setSelected] = useState(new Set(["Anestésicos"]));
 
-  const selectedValue = useMemo(
-    () => Array.from(selected).join(", ").replaceAll("_", " "),
-    [selected]
-  );
+  const getMedications = (keys: Set<string>) => {
+    const key = Array.from(keys)[0];
+
+    return items[key as Categorias].map((item, index) => (
+      <Table.Row key={index}>
+        <Table.Cell>{item.principioAtivo}</Table.Cell>
+        <Table.Cell>
+          {item.nomeComercial ? item.nomeComercial : "Vários"}
+        </Table.Cell>
+      </Table.Row>
+    ));
+  };
 
   return (
     <Layout
@@ -75,14 +254,17 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
         <Grid.Container direction="column" gap={1}>
           <Grid>
             <Dropdown>
-              <Dropdown.Button flat>{selectedValue}</Dropdown.Button>
+              <Dropdown.Button flat>{selected}</Dropdown.Button>
               <Dropdown.Menu
-                aria-label="Static Actions"
-                // disabledKeys={["Antissépticos"]}
+                aria-label="Selecione uma medicação"
                 selectionMode="single"
                 disallowEmptySelection
                 selectedKeys={selected}
-                onSelectionChange={setSelected}
+                onSelectionChange={(keys) => {
+                  setSelected(
+                    new Set([Array.from(keys).join(", ").replaceAll("_", "")])
+                  );
+                }}
               >
                 <Dropdown.Item key="Anestésicos">Anestésicos</Dropdown.Item>
                 <Dropdown.Item key="Antissépticos">Antissépticos</Dropdown.Item>
@@ -143,28 +325,20 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
               }}
             >
               <Table.Header>
-                {items.anestesicos.colunas.map((coluna) => (
-                  <Table.Column key={coluna} css={{ tt: "uppercase" }}>
-                    {coluna}
-                  </Table.Column>
-                ))}
+                <Table.Column css={{ tt: "uppercase" }}>
+                  Princípio Ativo
+                </Table.Column>
+                <Table.Column css={{ tt: "uppercase" }}>
+                  Nome Comercial
+                </Table.Column>
               </Table.Header>
-              <Table.Body>
-                {items.anestesicos.items.map((item, index) => (
-                  <Table.Row key={index}>
-                    <Table.Cell>{item.principioAtivo}</Table.Cell>
-                    <Table.Cell>
-                      {item.nomeComercial ? item.nomeComercial : "Vários"}
-                    </Table.Cell>
-                  </Table.Row>
-                ))}
-              </Table.Body>
+              <Table.Body>{getMedications(selected)}</Table.Body>
               <Table.Pagination
                 shadow
                 noMargin
                 align="center"
                 rowsPerPage={5}
-                // onPageChange={(page) => console.log({ page })}
+                onPageChange={(page) => console.log(page)}
               />
             </Table>
           </Grid>
