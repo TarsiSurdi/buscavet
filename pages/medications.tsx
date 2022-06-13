@@ -1,6 +1,6 @@
 import { Container, Dropdown, Grid, Table } from "@nextui-org/react";
 import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { RiMedicineBottleFill } from "react-icons/ri";
 
 import Layout from "../components/Layout";
