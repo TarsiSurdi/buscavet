@@ -5,6 +5,8 @@ import { FaHandHoldingMedical, FaBuilding, FaSyringe } from "react-icons/fa";
 
 import { GiFarmer } from "react-icons/gi";
 import { RiMedicineBottleFill } from "react-icons/ri";
+import { SiAddthis } from "react-icons/si";
+import { MdCleanHands } from "react-icons/md";
 
 import Layout from "../components/Layout";
 import NavButton from "../components/NavButton";
@@ -28,6 +30,18 @@ const Home: NextPage = () => {
             text="Vacinas"
             icon={<FaSyringe size="1.25em" />}
             link="/vaccines"
+          />
+        </NavGridContainer>
+        <NavGridContainer>
+          <NavButton
+            text="Suplementos"
+            icon={<SiAddthis size="1.25em" />}
+            link="/supplements"
+          />
+          <NavButton
+            text="Desinfetantes"
+            icon={<MdCleanHands size="1.25em" />}
+            link="/disinfectants"
           />
         </NavGridContainer>
         <NavGridContainer>
