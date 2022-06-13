@@ -12,7 +12,7 @@ const Disinfectants: NextPage = () => {
       title="Buscavet - Desinfetantes"
       url="https://buscavet.vercel.app/disinfectants"
     >
-      <Container sm>
+      <Container sm css={{ pb: "$20" }}>
         <PageNavigation icon={<MdCleanHands />} title="Desinfetantes" />
         <Table
           aria-label="Tabela de desinfetantes"

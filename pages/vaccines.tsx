@@ -82,7 +82,7 @@ const Vaccines: NextPage<VaccinesProps> = ({ items }) => {
       title="Buscavet - Vacinas"
       url="https://buscavet.vercel.app/vaccines"
     >
-      <Container sm>
+      <Container sm css={{ pb: "$20" }}>
         <PageNavigation icon={<FaSyringe />} title="Vacinas" />
         <Grid.Container direction="column" gap={1}>
           <Grid>

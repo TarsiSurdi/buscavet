@@ -100,7 +100,7 @@ const Supplements: NextPage<SupplementsProps> = ({ items }) => {
       title="Buscavet - Suplementos"
       url="https://buscavet.vercel.app/supplements"
     >
-      <Container sm>
+      <Container sm css={{ pb: "$20" }}>
         <PageNavigation icon={<SiAddthis />} title="Suplementos" />
         <Grid.Container direction="column" gap={1}>
           <Grid>
