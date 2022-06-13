@@ -235,7 +235,7 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
   const getMedications = (keys: Set<string>) => {
     const key = Array.from(keys)[0];
 
-    return items[key as Categorias].map((item, index) => (
+    const tableRows = items[key as Categorias].map((item, index) => (
       <Table.Row key={index}>
         <Table.Cell>{item.principioAtivo}</Table.Cell>
         <Table.Cell>
@@ -243,6 +243,32 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
         </Table.Cell>
       </Table.Row>
     ));
+
+    return (
+      <Table
+        aria-label="Tabela de medicações"
+        bordered
+        css={{
+          height: "calc($space$14 * 8)",
+          minWidth: "100%",
+        }}
+      >
+        <Table.Header>
+          <Table.Column css={{ tt: "uppercase" }}>Princípio Ativo</Table.Column>
+          <Table.Column css={{ tt: "uppercase" }}>Nome Comercial</Table.Column>
+        </Table.Header>
+        <Table.Body>{tableRows}</Table.Body>
+        <Table.Pagination
+          shadow
+          noMargin
+          align="center"
+          rowsPerPage={5}
+          page={page}
+          onPageChange={setPage}
+          total={Math.ceil(tableRows.length / 5)}
+        />
+      </Table>
+    );
   };
 
   return (
@@ -317,35 +343,7 @@ const Medications: NextPage<MedicationsProps> = ({ items }) => {
               </Dropdown.Menu>
             </Dropdown>
           </Grid>
-          <Grid>
-            <Table
-              aria-label="Tabela de medicações"
-              bordered
-              css={{
-                height: "calc($space$14 * 8)",
-                minWidth: "100%",
-              }}
-            >
-              <Table.Header>
-                <Table.Column css={{ tt: "uppercase" }}>
-                  Princípio Ativo
-                </Table.Column>
-                <Table.Column css={{ tt: "uppercase" }}>
-                  Nome Comercial
-                </Table.Column>
-              </Table.Header>
-              <Table.Body>{getMedications(selected)}</Table.Body>
-              <Table.Pagination
-                shadow
-                noMargin
-                align="center"
-                rowsPerPage={5}
-                page={page}
-                onPageChange={setPage}
-                total={Math.ceil(getMedications(selected).length / 5)}
-              />
-            </Table>
-          </Grid>
+          <Grid>{getMedications(selected)}</Grid>
         </Grid.Container>
       </Container>
     </Layout>
