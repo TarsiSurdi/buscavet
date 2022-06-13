@@ -25,8 +25,6 @@ const Footer: React.FC<FooterProps> = ({ phrases = phraseList }) => {
 
   useEffect(() => {
     const intervalId = setTimeout(() => {
-      console.log(phrasesArray);
-
       if (phrasesArray.length === 0) {
         setPhrasesArray(phrases);
         return;
