@@ -2,8 +2,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  padding: 1em;
-  padding-bottom: calc(1em + env(safe-area-inset-bottom));
+  padding: 1em 1em 1em calc(1em + env(safe-area-inset-bottom));
   border-top: 1px solid #dcdcdc;
   justify-content: center;
   align-items: center;
