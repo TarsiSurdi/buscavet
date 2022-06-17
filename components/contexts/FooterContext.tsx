@@ -5,7 +5,12 @@ const phrases = [
   "🍪 Esse site não utiliza cookies",
   "👨‍💻 Desenvolvido por Tarcísio Surdi",
   "👩‍⚕️ Revisão por Julia Ellen",
+  "👩‍⚕️ Revisão por Eloisa Lopes",
   "🎓 Um trabalho proveniente da UNOESC",
+  "👨‍⚕️ Revisão por Igor Augusto Louvatel",
+  "👨‍⚕️ Revisão por Rodrigo Zanini",
+  "👨‍⚕️ Revisão por Thiago Miranda",
+  "🔓 Este é um projeto de código aberto!",
 ];
 
 interface FooterContextValue {
