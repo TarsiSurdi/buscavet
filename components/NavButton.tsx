@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Spacer, Text } from "@nextui-org/react";
+import { Card, Grid, Spacer, Text } from "@nextui-org/react";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { FaArrowRight } from "react-icons/fa";
@@ -47,7 +47,7 @@ const NavButton: FC<NavButtonProps> = ({ text, icon, link }) => {
                   },
                 }}
               >
-                <FaArrowRight />
+                <FaArrowRight color="black" />
               </Grid>
             </Grid.Container>
           </Card.Body>
