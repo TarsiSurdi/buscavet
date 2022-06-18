@@ -16,9 +16,15 @@ export default createTheme({
       primarySolidContrast: "$white",
       primaryShadow: "$green500",
 
-      gradient:
-        "linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)",
-      link: "#5E1DAD",
+      danger100: "#FFE5D6",
+      danger200: "#FFC4AE",
+      danger300: "#FF9C85",
+      danger400: "#FF7667",
+      danger500: "#FF3835",
+      danger600: "#DB2633",
+      danger700: "#B71A33",
+      danger800: "#931030",
+      danger900: "#7A0A2F",
     },
   },
 });
