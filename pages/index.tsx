@@ -4,13 +4,14 @@ import type { NextPage } from "next";
 import { FaHandHoldingMedical, FaBuilding, FaSyringe } from "react-icons/fa";
 
 import { GiFarmer } from "react-icons/gi";
-import { RiMedicineBottleFill } from "react-icons/ri";
+import { RiAlertLine, RiMedicineBottleFill } from "react-icons/ri";
 import { SiAddthis } from "react-icons/si";
 import { MdCleanHands } from "react-icons/md";
 
 import Layout from "../components/Layout";
 import NavButton from "../components/NavButton";
 import NavGridContainer from "../components/NavGridContainer";
+import AlertButton from "../components/AlertButton";
 
 const Home: NextPage = () => {
   return (
@@ -21,9 +22,16 @@ const Home: NextPage = () => {
     >
       <Container sm gap={2} css={{ mt: "$10", pb: "$20" }}>
         <NavGridContainer>
+          <AlertButton
+            text="Alerta"
+            icon={<RiAlertLine size="1.5em" color="white" />}
+            link="/alert"
+          />
+        </NavGridContainer>
+        <NavGridContainer>
           <NavButton
             text="Medicações"
-            icon={<RiMedicineBottleFill size="1.25em" />}
+            icon={<RiMedicineBottleFill size="1.5em" />}
             link="/medications"
           />
           <NavButton
